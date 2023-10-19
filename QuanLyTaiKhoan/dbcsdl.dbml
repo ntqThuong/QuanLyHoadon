@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ql" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6MF64C4\SQLEXPRESS;Initial Catalog=ql;Integrated Security=True" SettingsObjectName="QuanLyTaiKhoan.Properties.Settings" SettingsPropertyName="qlConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="qlbanhangVQ" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=qlbanhangVQ.mssql.somee.com;Initial Catalog=qlbanhangVQ;Persist Security Info=True;User ID=vinhquy1402_SQLLogin_1" SettingsObjectName="QuanLyTaiKhoan.Properties.Settings" SettingsPropertyName="qlbanhangVQConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms">
     <Type Name="admin_AccessGroupUserForm">
       <Column Name="guf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -7,6 +7,18 @@
       <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="form_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="admin_GroupUser_admin_AccessGroupUserForm" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbSlides" Member="tbSlides">
+    <Type Name="tbSlide">
+      <Column Name="slide_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="slide_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="slide_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="silde_title1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="slide_link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="slide_summary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="slide_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules">
@@ -77,6 +89,20 @@
       <Association Name="admin_GroupUser_admin_User" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbCustomerAccount" Member="tbCustomerAccounts">
+    <Type Name="tbCustomerAccount">
+      <Column Name="customer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="customer_firstname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="customer_lastname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="customer_fullname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="customer_phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="customer_email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="customer_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="customer_user" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="customer_pass" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbHoaDon" Member="tbHoaDons">
     <Type Name="tbHoaDon">
       <Column Name="hoadon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -101,6 +127,66 @@
       <Column Name="kho_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="kho_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="kho_diachi" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbNewCate" Member="tbNewCates">
+    <Type Name="tbNewCate">
+      <Column Name="newcate_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="newcate_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="newcate_summary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbProduct" Member="tbProducts">
+    <Type Name="tbProduct">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_position" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_summary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_quantum" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_show" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_new" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productcate_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title_web" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="h1_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_chungloai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thuonghieu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_representative" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_cart" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_price_new" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_price" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_promotions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="product_price_entry" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="product_soluong" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbProductCate" Member="tbProductCates">
+    <Type Name="tbProductCate">
+      <Column Name="productcate_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="productcate_position" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productcate_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productcate_show" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productgroup_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title_web" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="h1_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productcate_parent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productcate_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="active" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbSanPham" Member="tbSanPhams">

@@ -12,3 +12,17 @@ C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoa
 C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmTrangChu.resources
 C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.AssemblyReference.cache
 C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.QuanLyTaiKhoan.frmSanPham.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.exe.config
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.exe
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.pdb
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.AssemblyReference.cache
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmDangKy.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmDangNhap.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmQuenMatKhau.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmTrangChu.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.Properties.Resources.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.QuanLyTaiKhoan.frmSanPham.resources
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.GenerateResource.cache
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.CoreCompileInputs.cache
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.exe
+D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.pdb

@@ -77,5 +77,16 @@ namespace QuanLyTaiKhoan.Properties {
                 return ((string)(this["qlConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=qlbanhangVQ.mssql.somee.com;Initial Catalog=qlbanhangVQ;Persist Secur" +
+            "ity Info=True;User ID=vinhquy1402_SQLLogin_1;Password=p1yoxf6u2n")]
+        public string qlbanhangVQConnectionString {
+            get {
+                return ((string)(this["qlbanhangVQConnectionString"]));
+            }
+        }
     }
 }

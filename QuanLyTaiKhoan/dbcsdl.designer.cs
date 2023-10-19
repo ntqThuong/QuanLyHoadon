@@ -22,7 +22,7 @@ namespace QuanLyTaiKhoan
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ql")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="qlbanhangVQ")]
 	public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,6 +33,9 @@ namespace QuanLyTaiKhoan
     partial void Insertadmin_AccessGroupUserForm(admin_AccessGroupUserForm instance);
     partial void Updateadmin_AccessGroupUserForm(admin_AccessGroupUserForm instance);
     partial void Deleteadmin_AccessGroupUserForm(admin_AccessGroupUserForm instance);
+    partial void InserttbSlide(tbSlide instance);
+    partial void UpdatetbSlide(tbSlide instance);
+    partial void DeletetbSlide(tbSlide instance);
     partial void Insertadmin_AccessGroupUserModule(admin_AccessGroupUserModule instance);
     partial void Updateadmin_AccessGroupUserModule(admin_AccessGroupUserModule instance);
     partial void Deleteadmin_AccessGroupUserModule(admin_AccessGroupUserModule instance);
@@ -51,6 +54,9 @@ namespace QuanLyTaiKhoan
     partial void Insertadmin_User(admin_User instance);
     partial void Updateadmin_User(admin_User instance);
     partial void Deleteadmin_User(admin_User instance);
+    partial void InserttbCustomerAccount(tbCustomerAccount instance);
+    partial void UpdatetbCustomerAccount(tbCustomerAccount instance);
+    partial void DeletetbCustomerAccount(tbCustomerAccount instance);
     partial void InserttbHoaDon(tbHoaDon instance);
     partial void UpdatetbHoaDon(tbHoaDon instance);
     partial void DeletetbHoaDon(tbHoaDon instance);
@@ -60,6 +66,15 @@ namespace QuanLyTaiKhoan
     partial void InserttbKho(tbKho instance);
     partial void UpdatetbKho(tbKho instance);
     partial void DeletetbKho(tbKho instance);
+    partial void InserttbNewCate(tbNewCate instance);
+    partial void UpdatetbNewCate(tbNewCate instance);
+    partial void DeletetbNewCate(tbNewCate instance);
+    partial void InserttbProduct(tbProduct instance);
+    partial void UpdatetbProduct(tbProduct instance);
+    partial void DeletetbProduct(tbProduct instance);
+    partial void InserttbProductCate(tbProductCate instance);
+    partial void UpdatetbProductCate(tbProductCate instance);
+    partial void DeletetbProductCate(tbProductCate instance);
     partial void InserttbSanPham(tbSanPham instance);
     partial void UpdatetbSanPham(tbSanPham instance);
     partial void DeletetbSanPham(tbSanPham instance);
@@ -69,7 +84,7 @@ namespace QuanLyTaiKhoan
     #endregion
 		
 		public dbcsdlDataContext() : 
-				base(global::QuanLyTaiKhoan.Properties.Settings.Default.qlConnectionString, mappingSource)
+				base(global::QuanLyTaiKhoan.Properties.Settings.Default.qlbanhangVQConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -103,6 +118,14 @@ namespace QuanLyTaiKhoan
 			get
 			{
 				return this.GetTable<admin_AccessGroupUserForm>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbSlide> tbSlides
+		{
+			get
+			{
+				return this.GetTable<tbSlide>();
 			}
 		}
 		
@@ -154,6 +177,14 @@ namespace QuanLyTaiKhoan
 			}
 		}
 		
+		public System.Data.Linq.Table<tbCustomerAccount> tbCustomerAccounts
+		{
+			get
+			{
+				return this.GetTable<tbCustomerAccount>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tbHoaDon> tbHoaDons
 		{
 			get
@@ -175,6 +206,30 @@ namespace QuanLyTaiKhoan
 			get
 			{
 				return this.GetTable<tbKho>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbNewCate> tbNewCates
+		{
+			get
+			{
+				return this.GetTable<tbNewCate>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbProduct> tbProducts
+		{
+			get
+			{
+				return this.GetTable<tbProduct>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbProductCate> tbProductCates
+		{
+			get
+			{
+				return this.GetTable<tbProductCate>();
 			}
 		}
 		
@@ -345,6 +400,236 @@ namespace QuanLyTaiKhoan
 						this._groupuser_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("admin_GroupUser");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbSlides")]
+	public partial class tbSlide : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _slide_id;
+		
+		private string _slide_image;
+		
+		private string _slide_title;
+		
+		private string _silde_title1;
+		
+		private string _slide_link;
+		
+		private string _slide_summary;
+		
+		private string _slide_content;
+		
+		private System.Nullable<bool> _hidden;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onslide_idChanging(int value);
+    partial void Onslide_idChanged();
+    partial void Onslide_imageChanging(string value);
+    partial void Onslide_imageChanged();
+    partial void Onslide_titleChanging(string value);
+    partial void Onslide_titleChanged();
+    partial void Onsilde_title1Changing(string value);
+    partial void Onsilde_title1Changed();
+    partial void Onslide_linkChanging(string value);
+    partial void Onslide_linkChanged();
+    partial void Onslide_summaryChanging(string value);
+    partial void Onslide_summaryChanged();
+    partial void Onslide_contentChanging(string value);
+    partial void Onslide_contentChanged();
+    partial void OnhiddenChanging(System.Nullable<bool> value);
+    partial void OnhiddenChanged();
+    #endregion
+		
+		public tbSlide()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int slide_id
+		{
+			get
+			{
+				return this._slide_id;
+			}
+			set
+			{
+				if ((this._slide_id != value))
+				{
+					this.Onslide_idChanging(value);
+					this.SendPropertyChanging();
+					this._slide_id = value;
+					this.SendPropertyChanged("slide_id");
+					this.Onslide_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_image", DbType="NVarChar(MAX)")]
+		public string slide_image
+		{
+			get
+			{
+				return this._slide_image;
+			}
+			set
+			{
+				if ((this._slide_image != value))
+				{
+					this.Onslide_imageChanging(value);
+					this.SendPropertyChanging();
+					this._slide_image = value;
+					this.SendPropertyChanged("slide_image");
+					this.Onslide_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_title", DbType="NVarChar(MAX)")]
+		public string slide_title
+		{
+			get
+			{
+				return this._slide_title;
+			}
+			set
+			{
+				if ((this._slide_title != value))
+				{
+					this.Onslide_titleChanging(value);
+					this.SendPropertyChanging();
+					this._slide_title = value;
+					this.SendPropertyChanged("slide_title");
+					this.Onslide_titleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_silde_title1", DbType="NVarChar(MAX)")]
+		public string silde_title1
+		{
+			get
+			{
+				return this._silde_title1;
+			}
+			set
+			{
+				if ((this._silde_title1 != value))
+				{
+					this.Onsilde_title1Changing(value);
+					this.SendPropertyChanging();
+					this._silde_title1 = value;
+					this.SendPropertyChanged("silde_title1");
+					this.Onsilde_title1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_link", DbType="NVarChar(MAX)")]
+		public string slide_link
+		{
+			get
+			{
+				return this._slide_link;
+			}
+			set
+			{
+				if ((this._slide_link != value))
+				{
+					this.Onslide_linkChanging(value);
+					this.SendPropertyChanging();
+					this._slide_link = value;
+					this.SendPropertyChanged("slide_link");
+					this.Onslide_linkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_summary", DbType="NVarChar(MAX)")]
+		public string slide_summary
+		{
+			get
+			{
+				return this._slide_summary;
+			}
+			set
+			{
+				if ((this._slide_summary != value))
+				{
+					this.Onslide_summaryChanging(value);
+					this.SendPropertyChanging();
+					this._slide_summary = value;
+					this.SendPropertyChanged("slide_summary");
+					this.Onslide_summaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slide_content", DbType="NVarChar(MAX)")]
+		public string slide_content
+		{
+			get
+			{
+				return this._slide_content;
+			}
+			set
+			{
+				if ((this._slide_content != value))
+				{
+					this.Onslide_contentChanging(value);
+					this.SendPropertyChanging();
+					this._slide_content = value;
+					this.SendPropertyChanged("slide_content");
+					this.Onslide_contentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hidden", DbType="Bit")]
+		public System.Nullable<bool> hidden
+		{
+			get
+			{
+				return this._hidden;
+			}
+			set
+			{
+				if ((this._hidden != value))
+				{
+					this.OnhiddenChanging(value);
+					this.SendPropertyChanging();
+					this._hidden = value;
+					this.SendPropertyChanged("hidden");
+					this.OnhiddenChanged();
 				}
 			}
 		}
@@ -1784,6 +2069,284 @@ namespace QuanLyTaiKhoan
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbCustomerAccount")]
+	public partial class tbCustomerAccount : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _customer_id;
+		
+		private string _customer_firstname;
+		
+		private string _customer_lastname;
+		
+		private string _customer_fullname;
+		
+		private System.Nullable<int> _customer_phone;
+		
+		private string _customer_email;
+		
+		private System.Nullable<bool> _hidden;
+		
+		private string _customer_address;
+		
+		private string _customer_user;
+		
+		private string _customer_pass;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Oncustomer_idChanging(int value);
+    partial void Oncustomer_idChanged();
+    partial void Oncustomer_firstnameChanging(string value);
+    partial void Oncustomer_firstnameChanged();
+    partial void Oncustomer_lastnameChanging(string value);
+    partial void Oncustomer_lastnameChanged();
+    partial void Oncustomer_fullnameChanging(string value);
+    partial void Oncustomer_fullnameChanged();
+    partial void Oncustomer_phoneChanging(System.Nullable<int> value);
+    partial void Oncustomer_phoneChanged();
+    partial void Oncustomer_emailChanging(string value);
+    partial void Oncustomer_emailChanged();
+    partial void OnhiddenChanging(System.Nullable<bool> value);
+    partial void OnhiddenChanged();
+    partial void Oncustomer_addressChanging(string value);
+    partial void Oncustomer_addressChanged();
+    partial void Oncustomer_userChanging(string value);
+    partial void Oncustomer_userChanged();
+    partial void Oncustomer_passChanging(string value);
+    partial void Oncustomer_passChanged();
+    #endregion
+		
+		public tbCustomerAccount()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_firstname", DbType="NVarChar(MAX)")]
+		public string customer_firstname
+		{
+			get
+			{
+				return this._customer_firstname;
+			}
+			set
+			{
+				if ((this._customer_firstname != value))
+				{
+					this.Oncustomer_firstnameChanging(value);
+					this.SendPropertyChanging();
+					this._customer_firstname = value;
+					this.SendPropertyChanged("customer_firstname");
+					this.Oncustomer_firstnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_lastname", DbType="NVarChar(MAX)")]
+		public string customer_lastname
+		{
+			get
+			{
+				return this._customer_lastname;
+			}
+			set
+			{
+				if ((this._customer_lastname != value))
+				{
+					this.Oncustomer_lastnameChanging(value);
+					this.SendPropertyChanging();
+					this._customer_lastname = value;
+					this.SendPropertyChanged("customer_lastname");
+					this.Oncustomer_lastnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_fullname", DbType="NVarChar(MAX)")]
+		public string customer_fullname
+		{
+			get
+			{
+				return this._customer_fullname;
+			}
+			set
+			{
+				if ((this._customer_fullname != value))
+				{
+					this.Oncustomer_fullnameChanging(value);
+					this.SendPropertyChanging();
+					this._customer_fullname = value;
+					this.SendPropertyChanged("customer_fullname");
+					this.Oncustomer_fullnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_phone", DbType="Int")]
+		public System.Nullable<int> customer_phone
+		{
+			get
+			{
+				return this._customer_phone;
+			}
+			set
+			{
+				if ((this._customer_phone != value))
+				{
+					this.Oncustomer_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._customer_phone = value;
+					this.SendPropertyChanged("customer_phone");
+					this.Oncustomer_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_email", DbType="NVarChar(MAX)")]
+		public string customer_email
+		{
+			get
+			{
+				return this._customer_email;
+			}
+			set
+			{
+				if ((this._customer_email != value))
+				{
+					this.Oncustomer_emailChanging(value);
+					this.SendPropertyChanging();
+					this._customer_email = value;
+					this.SendPropertyChanged("customer_email");
+					this.Oncustomer_emailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hidden", DbType="Bit")]
+		public System.Nullable<bool> hidden
+		{
+			get
+			{
+				return this._hidden;
+			}
+			set
+			{
+				if ((this._hidden != value))
+				{
+					this.OnhiddenChanging(value);
+					this.SendPropertyChanging();
+					this._hidden = value;
+					this.SendPropertyChanged("hidden");
+					this.OnhiddenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_address", DbType="NVarChar(MAX)")]
+		public string customer_address
+		{
+			get
+			{
+				return this._customer_address;
+			}
+			set
+			{
+				if ((this._customer_address != value))
+				{
+					this.Oncustomer_addressChanging(value);
+					this.SendPropertyChanging();
+					this._customer_address = value;
+					this.SendPropertyChanged("customer_address");
+					this.Oncustomer_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_user", DbType="NVarChar(MAX)")]
+		public string customer_user
+		{
+			get
+			{
+				return this._customer_user;
+			}
+			set
+			{
+				if ((this._customer_user != value))
+				{
+					this.Oncustomer_userChanging(value);
+					this.SendPropertyChanging();
+					this._customer_user = value;
+					this.SendPropertyChanged("customer_user");
+					this.Oncustomer_userChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_pass", DbType="NVarChar(MAX)")]
+		public string customer_pass
+		{
+			get
+			{
+				return this._customer_pass;
+			}
+			set
+			{
+				if ((this._customer_pass != value))
+				{
+					this.Oncustomer_passChanging(value);
+					this.SendPropertyChanging();
+					this._customer_pass = value;
+					this.SendPropertyChanged("customer_pass");
+					this.Oncustomer_passChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbHoaDon")]
 	public partial class tbHoaDon : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2247,6 +2810,1272 @@ namespace QuanLyTaiKhoan
 					this._kho_diachi = value;
 					this.SendPropertyChanged("kho_diachi");
 					this.Onkho_diachiChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbNewCate")]
+	public partial class tbNewCate : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _newcate_id;
+		
+		private string _newcate_title;
+		
+		private string _newcate_summary;
+		
+		private System.Nullable<bool> _hidden;
+		
+		private string _link_seo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onnewcate_idChanging(int value);
+    partial void Onnewcate_idChanged();
+    partial void Onnewcate_titleChanging(string value);
+    partial void Onnewcate_titleChanged();
+    partial void Onnewcate_summaryChanging(string value);
+    partial void Onnewcate_summaryChanged();
+    partial void OnhiddenChanging(System.Nullable<bool> value);
+    partial void OnhiddenChanged();
+    partial void Onlink_seoChanging(string value);
+    partial void Onlink_seoChanged();
+    #endregion
+		
+		public tbNewCate()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newcate_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int newcate_id
+		{
+			get
+			{
+				return this._newcate_id;
+			}
+			set
+			{
+				if ((this._newcate_id != value))
+				{
+					this.Onnewcate_idChanging(value);
+					this.SendPropertyChanging();
+					this._newcate_id = value;
+					this.SendPropertyChanged("newcate_id");
+					this.Onnewcate_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newcate_title", DbType="NVarChar(MAX)")]
+		public string newcate_title
+		{
+			get
+			{
+				return this._newcate_title;
+			}
+			set
+			{
+				if ((this._newcate_title != value))
+				{
+					this.Onnewcate_titleChanging(value);
+					this.SendPropertyChanging();
+					this._newcate_title = value;
+					this.SendPropertyChanged("newcate_title");
+					this.Onnewcate_titleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_newcate_summary", DbType="NVarChar(MAX)")]
+		public string newcate_summary
+		{
+			get
+			{
+				return this._newcate_summary;
+			}
+			set
+			{
+				if ((this._newcate_summary != value))
+				{
+					this.Onnewcate_summaryChanging(value);
+					this.SendPropertyChanging();
+					this._newcate_summary = value;
+					this.SendPropertyChanged("newcate_summary");
+					this.Onnewcate_summaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hidden", DbType="Bit")]
+		public System.Nullable<bool> hidden
+		{
+			get
+			{
+				return this._hidden;
+			}
+			set
+			{
+				if ((this._hidden != value))
+				{
+					this.OnhiddenChanging(value);
+					this.SendPropertyChanging();
+					this._hidden = value;
+					this.SendPropertyChanged("hidden");
+					this.OnhiddenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_link_seo", DbType="NVarChar(MAX)")]
+		public string link_seo
+		{
+			get
+			{
+				return this._link_seo;
+			}
+			set
+			{
+				if ((this._link_seo != value))
+				{
+					this.Onlink_seoChanging(value);
+					this.SendPropertyChanging();
+					this._link_seo = value;
+					this.SendPropertyChanged("link_seo");
+					this.Onlink_seoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbProduct")]
+	public partial class tbProduct : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _product_id;
+		
+		private string _product_position;
+		
+		private string _product_title;
+		
+		private string _product_image;
+		
+		private string _product_summary;
+		
+		private string _product_content;
+		
+		private string _product_quantum;
+		
+		private string _product_show;
+		
+		private string _product_new;
+		
+		private System.Nullable<int> _productcate_id;
+		
+		private string _title_web;
+		
+		private string _meta_title;
+		
+		private string _meta_keywords;
+		
+		private string _meta_description;
+		
+		private string _h1_seo;
+		
+		private string _link_seo;
+		
+		private string _product_chungloai;
+		
+		private System.Nullable<int> _thuonghieu_id;
+		
+		private string _meta_image;
+		
+		private string _product_representative;
+		
+		private string _product_cart;
+		
+		private string _product_price_new;
+		
+		private string _product_price;
+		
+		private string _product_promotions;
+		
+		private string _product_price_entry;
+		
+		private System.Nullable<bool> _hidden;
+		
+		private string _product_soluong;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onproduct_idChanging(int value);
+    partial void Onproduct_idChanged();
+    partial void Onproduct_positionChanging(string value);
+    partial void Onproduct_positionChanged();
+    partial void Onproduct_titleChanging(string value);
+    partial void Onproduct_titleChanged();
+    partial void Onproduct_imageChanging(string value);
+    partial void Onproduct_imageChanged();
+    partial void Onproduct_summaryChanging(string value);
+    partial void Onproduct_summaryChanged();
+    partial void Onproduct_contentChanging(string value);
+    partial void Onproduct_contentChanged();
+    partial void Onproduct_quantumChanging(string value);
+    partial void Onproduct_quantumChanged();
+    partial void Onproduct_showChanging(string value);
+    partial void Onproduct_showChanged();
+    partial void Onproduct_newChanging(string value);
+    partial void Onproduct_newChanged();
+    partial void Onproductcate_idChanging(System.Nullable<int> value);
+    partial void Onproductcate_idChanged();
+    partial void Ontitle_webChanging(string value);
+    partial void Ontitle_webChanged();
+    partial void Onmeta_titleChanging(string value);
+    partial void Onmeta_titleChanged();
+    partial void Onmeta_keywordsChanging(string value);
+    partial void Onmeta_keywordsChanged();
+    partial void Onmeta_descriptionChanging(string value);
+    partial void Onmeta_descriptionChanged();
+    partial void Onh1_seoChanging(string value);
+    partial void Onh1_seoChanged();
+    partial void Onlink_seoChanging(string value);
+    partial void Onlink_seoChanged();
+    partial void Onproduct_chungloaiChanging(string value);
+    partial void Onproduct_chungloaiChanged();
+    partial void Onthuonghieu_idChanging(System.Nullable<int> value);
+    partial void Onthuonghieu_idChanged();
+    partial void Onmeta_imageChanging(string value);
+    partial void Onmeta_imageChanged();
+    partial void Onproduct_representativeChanging(string value);
+    partial void Onproduct_representativeChanged();
+    partial void Onproduct_cartChanging(string value);
+    partial void Onproduct_cartChanged();
+    partial void Onproduct_price_newChanging(string value);
+    partial void Onproduct_price_newChanged();
+    partial void Onproduct_priceChanging(string value);
+    partial void Onproduct_priceChanged();
+    partial void Onproduct_promotionsChanging(string value);
+    partial void Onproduct_promotionsChanged();
+    partial void Onproduct_price_entryChanging(string value);
+    partial void Onproduct_price_entryChanged();
+    partial void OnhiddenChanging(System.Nullable<bool> value);
+    partial void OnhiddenChanged();
+    partial void Onproduct_soluongChanging(string value);
+    partial void Onproduct_soluongChanged();
+    #endregion
+		
+		public tbProduct()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int product_id
+		{
+			get
+			{
+				return this._product_id;
+			}
+			set
+			{
+				if ((this._product_id != value))
+				{
+					this.Onproduct_idChanging(value);
+					this.SendPropertyChanging();
+					this._product_id = value;
+					this.SendPropertyChanged("product_id");
+					this.Onproduct_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_position", DbType="NVarChar(MAX)")]
+		public string product_position
+		{
+			get
+			{
+				return this._product_position;
+			}
+			set
+			{
+				if ((this._product_position != value))
+				{
+					this.Onproduct_positionChanging(value);
+					this.SendPropertyChanging();
+					this._product_position = value;
+					this.SendPropertyChanged("product_position");
+					this.Onproduct_positionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_title", DbType="NVarChar(MAX)")]
+		public string product_title
+		{
+			get
+			{
+				return this._product_title;
+			}
+			set
+			{
+				if ((this._product_title != value))
+				{
+					this.Onproduct_titleChanging(value);
+					this.SendPropertyChanging();
+					this._product_title = value;
+					this.SendPropertyChanged("product_title");
+					this.Onproduct_titleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_image", DbType="NVarChar(MAX)")]
+		public string product_image
+		{
+			get
+			{
+				return this._product_image;
+			}
+			set
+			{
+				if ((this._product_image != value))
+				{
+					this.Onproduct_imageChanging(value);
+					this.SendPropertyChanging();
+					this._product_image = value;
+					this.SendPropertyChanged("product_image");
+					this.Onproduct_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_summary", DbType="NVarChar(MAX)")]
+		public string product_summary
+		{
+			get
+			{
+				return this._product_summary;
+			}
+			set
+			{
+				if ((this._product_summary != value))
+				{
+					this.Onproduct_summaryChanging(value);
+					this.SendPropertyChanging();
+					this._product_summary = value;
+					this.SendPropertyChanged("product_summary");
+					this.Onproduct_summaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_content", DbType="NVarChar(MAX)")]
+		public string product_content
+		{
+			get
+			{
+				return this._product_content;
+			}
+			set
+			{
+				if ((this._product_content != value))
+				{
+					this.Onproduct_contentChanging(value);
+					this.SendPropertyChanging();
+					this._product_content = value;
+					this.SendPropertyChanged("product_content");
+					this.Onproduct_contentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_quantum", DbType="NVarChar(MAX)")]
+		public string product_quantum
+		{
+			get
+			{
+				return this._product_quantum;
+			}
+			set
+			{
+				if ((this._product_quantum != value))
+				{
+					this.Onproduct_quantumChanging(value);
+					this.SendPropertyChanging();
+					this._product_quantum = value;
+					this.SendPropertyChanged("product_quantum");
+					this.Onproduct_quantumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_show", DbType="NVarChar(MAX)")]
+		public string product_show
+		{
+			get
+			{
+				return this._product_show;
+			}
+			set
+			{
+				if ((this._product_show != value))
+				{
+					this.Onproduct_showChanging(value);
+					this.SendPropertyChanging();
+					this._product_show = value;
+					this.SendPropertyChanged("product_show");
+					this.Onproduct_showChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_new", DbType="NVarChar(MAX)")]
+		public string product_new
+		{
+			get
+			{
+				return this._product_new;
+			}
+			set
+			{
+				if ((this._product_new != value))
+				{
+					this.Onproduct_newChanging(value);
+					this.SendPropertyChanging();
+					this._product_new = value;
+					this.SendPropertyChanged("product_new");
+					this.Onproduct_newChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_id", DbType="Int")]
+		public System.Nullable<int> productcate_id
+		{
+			get
+			{
+				return this._productcate_id;
+			}
+			set
+			{
+				if ((this._productcate_id != value))
+				{
+					this.Onproductcate_idChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_id = value;
+					this.SendPropertyChanged("productcate_id");
+					this.Onproductcate_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title_web", DbType="NVarChar(MAX)")]
+		public string title_web
+		{
+			get
+			{
+				return this._title_web;
+			}
+			set
+			{
+				if ((this._title_web != value))
+				{
+					this.Ontitle_webChanging(value);
+					this.SendPropertyChanging();
+					this._title_web = value;
+					this.SendPropertyChanged("title_web");
+					this.Ontitle_webChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_title", DbType="NVarChar(MAX)")]
+		public string meta_title
+		{
+			get
+			{
+				return this._meta_title;
+			}
+			set
+			{
+				if ((this._meta_title != value))
+				{
+					this.Onmeta_titleChanging(value);
+					this.SendPropertyChanging();
+					this._meta_title = value;
+					this.SendPropertyChanged("meta_title");
+					this.Onmeta_titleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_keywords", DbType="NVarChar(MAX)")]
+		public string meta_keywords
+		{
+			get
+			{
+				return this._meta_keywords;
+			}
+			set
+			{
+				if ((this._meta_keywords != value))
+				{
+					this.Onmeta_keywordsChanging(value);
+					this.SendPropertyChanging();
+					this._meta_keywords = value;
+					this.SendPropertyChanged("meta_keywords");
+					this.Onmeta_keywordsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_description", DbType="NVarChar(MAX)")]
+		public string meta_description
+		{
+			get
+			{
+				return this._meta_description;
+			}
+			set
+			{
+				if ((this._meta_description != value))
+				{
+					this.Onmeta_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._meta_description = value;
+					this.SendPropertyChanged("meta_description");
+					this.Onmeta_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_h1_seo", DbType="NVarChar(MAX)")]
+		public string h1_seo
+		{
+			get
+			{
+				return this._h1_seo;
+			}
+			set
+			{
+				if ((this._h1_seo != value))
+				{
+					this.Onh1_seoChanging(value);
+					this.SendPropertyChanging();
+					this._h1_seo = value;
+					this.SendPropertyChanged("h1_seo");
+					this.Onh1_seoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_link_seo", DbType="NVarChar(MAX)")]
+		public string link_seo
+		{
+			get
+			{
+				return this._link_seo;
+			}
+			set
+			{
+				if ((this._link_seo != value))
+				{
+					this.Onlink_seoChanging(value);
+					this.SendPropertyChanging();
+					this._link_seo = value;
+					this.SendPropertyChanged("link_seo");
+					this.Onlink_seoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_chungloai", DbType="NVarChar(MAX)")]
+		public string product_chungloai
+		{
+			get
+			{
+				return this._product_chungloai;
+			}
+			set
+			{
+				if ((this._product_chungloai != value))
+				{
+					this.Onproduct_chungloaiChanging(value);
+					this.SendPropertyChanging();
+					this._product_chungloai = value;
+					this.SendPropertyChanged("product_chungloai");
+					this.Onproduct_chungloaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thuonghieu_id", DbType="Int")]
+		public System.Nullable<int> thuonghieu_id
+		{
+			get
+			{
+				return this._thuonghieu_id;
+			}
+			set
+			{
+				if ((this._thuonghieu_id != value))
+				{
+					this.Onthuonghieu_idChanging(value);
+					this.SendPropertyChanging();
+					this._thuonghieu_id = value;
+					this.SendPropertyChanged("thuonghieu_id");
+					this.Onthuonghieu_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_image", DbType="NVarChar(MAX)")]
+		public string meta_image
+		{
+			get
+			{
+				return this._meta_image;
+			}
+			set
+			{
+				if ((this._meta_image != value))
+				{
+					this.Onmeta_imageChanging(value);
+					this.SendPropertyChanging();
+					this._meta_image = value;
+					this.SendPropertyChanged("meta_image");
+					this.Onmeta_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_representative", DbType="NVarChar(MAX)")]
+		public string product_representative
+		{
+			get
+			{
+				return this._product_representative;
+			}
+			set
+			{
+				if ((this._product_representative != value))
+				{
+					this.Onproduct_representativeChanging(value);
+					this.SendPropertyChanging();
+					this._product_representative = value;
+					this.SendPropertyChanged("product_representative");
+					this.Onproduct_representativeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_cart", DbType="NVarChar(MAX)")]
+		public string product_cart
+		{
+			get
+			{
+				return this._product_cart;
+			}
+			set
+			{
+				if ((this._product_cart != value))
+				{
+					this.Onproduct_cartChanging(value);
+					this.SendPropertyChanging();
+					this._product_cart = value;
+					this.SendPropertyChanged("product_cart");
+					this.Onproduct_cartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_price_new", DbType="NVarChar(MAX)")]
+		public string product_price_new
+		{
+			get
+			{
+				return this._product_price_new;
+			}
+			set
+			{
+				if ((this._product_price_new != value))
+				{
+					this.Onproduct_price_newChanging(value);
+					this.SendPropertyChanging();
+					this._product_price_new = value;
+					this.SendPropertyChanged("product_price_new");
+					this.Onproduct_price_newChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_price", DbType="NVarChar(MAX)")]
+		public string product_price
+		{
+			get
+			{
+				return this._product_price;
+			}
+			set
+			{
+				if ((this._product_price != value))
+				{
+					this.Onproduct_priceChanging(value);
+					this.SendPropertyChanging();
+					this._product_price = value;
+					this.SendPropertyChanged("product_price");
+					this.Onproduct_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_promotions", DbType="NVarChar(MAX)")]
+		public string product_promotions
+		{
+			get
+			{
+				return this._product_promotions;
+			}
+			set
+			{
+				if ((this._product_promotions != value))
+				{
+					this.Onproduct_promotionsChanging(value);
+					this.SendPropertyChanging();
+					this._product_promotions = value;
+					this.SendPropertyChanged("product_promotions");
+					this.Onproduct_promotionsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_price_entry", DbType="NVarChar(MAX)")]
+		public string product_price_entry
+		{
+			get
+			{
+				return this._product_price_entry;
+			}
+			set
+			{
+				if ((this._product_price_entry != value))
+				{
+					this.Onproduct_price_entryChanging(value);
+					this.SendPropertyChanging();
+					this._product_price_entry = value;
+					this.SendPropertyChanged("product_price_entry");
+					this.Onproduct_price_entryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hidden", DbType="Bit")]
+		public System.Nullable<bool> hidden
+		{
+			get
+			{
+				return this._hidden;
+			}
+			set
+			{
+				if ((this._hidden != value))
+				{
+					this.OnhiddenChanging(value);
+					this.SendPropertyChanging();
+					this._hidden = value;
+					this.SendPropertyChanged("hidden");
+					this.OnhiddenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_soluong", DbType="NVarChar(MAX)")]
+		public string product_soluong
+		{
+			get
+			{
+				return this._product_soluong;
+			}
+			set
+			{
+				if ((this._product_soluong != value))
+				{
+					this.Onproduct_soluongChanging(value);
+					this.SendPropertyChanging();
+					this._product_soluong = value;
+					this.SendPropertyChanged("product_soluong");
+					this.Onproduct_soluongChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbProductCate")]
+	public partial class tbProductCate : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _productcate_id;
+		
+		private string _productcate_position;
+		
+		private string _productcate_title;
+		
+		private string _productcate_show;
+		
+		private System.Nullable<int> _productgroup_id;
+		
+		private string _title_web;
+		
+		private string _meta_title;
+		
+		private string _meta_keywords;
+		
+		private string _meta_description;
+		
+		private string _h1_seo;
+		
+		private string _link_seo;
+		
+		private string _productcate_parent;
+		
+		private string _productcate_content;
+		
+		private string _meta_image;
+		
+		private string _active;
+		
+		private System.Nullable<bool> _hidden;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onproductcate_idChanging(int value);
+    partial void Onproductcate_idChanged();
+    partial void Onproductcate_positionChanging(string value);
+    partial void Onproductcate_positionChanged();
+    partial void Onproductcate_titleChanging(string value);
+    partial void Onproductcate_titleChanged();
+    partial void Onproductcate_showChanging(string value);
+    partial void Onproductcate_showChanged();
+    partial void Onproductgroup_idChanging(System.Nullable<int> value);
+    partial void Onproductgroup_idChanged();
+    partial void Ontitle_webChanging(string value);
+    partial void Ontitle_webChanged();
+    partial void Onmeta_titleChanging(string value);
+    partial void Onmeta_titleChanged();
+    partial void Onmeta_keywordsChanging(string value);
+    partial void Onmeta_keywordsChanged();
+    partial void Onmeta_descriptionChanging(string value);
+    partial void Onmeta_descriptionChanged();
+    partial void Onh1_seoChanging(string value);
+    partial void Onh1_seoChanged();
+    partial void Onlink_seoChanging(string value);
+    partial void Onlink_seoChanged();
+    partial void Onproductcate_parentChanging(string value);
+    partial void Onproductcate_parentChanged();
+    partial void Onproductcate_contentChanging(string value);
+    partial void Onproductcate_contentChanged();
+    partial void Onmeta_imageChanging(string value);
+    partial void Onmeta_imageChanged();
+    partial void OnactiveChanging(string value);
+    partial void OnactiveChanged();
+    partial void OnhiddenChanging(System.Nullable<bool> value);
+    partial void OnhiddenChanged();
+    #endregion
+		
+		public tbProductCate()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int productcate_id
+		{
+			get
+			{
+				return this._productcate_id;
+			}
+			set
+			{
+				if ((this._productcate_id != value))
+				{
+					this.Onproductcate_idChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_id = value;
+					this.SendPropertyChanged("productcate_id");
+					this.Onproductcate_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_position", DbType="NVarChar(MAX)")]
+		public string productcate_position
+		{
+			get
+			{
+				return this._productcate_position;
+			}
+			set
+			{
+				if ((this._productcate_position != value))
+				{
+					this.Onproductcate_positionChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_position = value;
+					this.SendPropertyChanged("productcate_position");
+					this.Onproductcate_positionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_title", DbType="NVarChar(MAX)")]
+		public string productcate_title
+		{
+			get
+			{
+				return this._productcate_title;
+			}
+			set
+			{
+				if ((this._productcate_title != value))
+				{
+					this.Onproductcate_titleChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_title = value;
+					this.SendPropertyChanged("productcate_title");
+					this.Onproductcate_titleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_show", DbType="NVarChar(MAX)")]
+		public string productcate_show
+		{
+			get
+			{
+				return this._productcate_show;
+			}
+			set
+			{
+				if ((this._productcate_show != value))
+				{
+					this.Onproductcate_showChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_show = value;
+					this.SendPropertyChanged("productcate_show");
+					this.Onproductcate_showChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productgroup_id", DbType="Int")]
+		public System.Nullable<int> productgroup_id
+		{
+			get
+			{
+				return this._productgroup_id;
+			}
+			set
+			{
+				if ((this._productgroup_id != value))
+				{
+					this.Onproductgroup_idChanging(value);
+					this.SendPropertyChanging();
+					this._productgroup_id = value;
+					this.SendPropertyChanged("productgroup_id");
+					this.Onproductgroup_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title_web", DbType="NVarChar(MAX)")]
+		public string title_web
+		{
+			get
+			{
+				return this._title_web;
+			}
+			set
+			{
+				if ((this._title_web != value))
+				{
+					this.Ontitle_webChanging(value);
+					this.SendPropertyChanging();
+					this._title_web = value;
+					this.SendPropertyChanged("title_web");
+					this.Ontitle_webChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_title", DbType="NVarChar(MAX)")]
+		public string meta_title
+		{
+			get
+			{
+				return this._meta_title;
+			}
+			set
+			{
+				if ((this._meta_title != value))
+				{
+					this.Onmeta_titleChanging(value);
+					this.SendPropertyChanging();
+					this._meta_title = value;
+					this.SendPropertyChanged("meta_title");
+					this.Onmeta_titleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_keywords", DbType="NVarChar(MAX)")]
+		public string meta_keywords
+		{
+			get
+			{
+				return this._meta_keywords;
+			}
+			set
+			{
+				if ((this._meta_keywords != value))
+				{
+					this.Onmeta_keywordsChanging(value);
+					this.SendPropertyChanging();
+					this._meta_keywords = value;
+					this.SendPropertyChanged("meta_keywords");
+					this.Onmeta_keywordsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_description", DbType="NVarChar(MAX)")]
+		public string meta_description
+		{
+			get
+			{
+				return this._meta_description;
+			}
+			set
+			{
+				if ((this._meta_description != value))
+				{
+					this.Onmeta_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._meta_description = value;
+					this.SendPropertyChanged("meta_description");
+					this.Onmeta_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_h1_seo", DbType="NVarChar(MAX)")]
+		public string h1_seo
+		{
+			get
+			{
+				return this._h1_seo;
+			}
+			set
+			{
+				if ((this._h1_seo != value))
+				{
+					this.Onh1_seoChanging(value);
+					this.SendPropertyChanging();
+					this._h1_seo = value;
+					this.SendPropertyChanged("h1_seo");
+					this.Onh1_seoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_link_seo", DbType="NVarChar(MAX)")]
+		public string link_seo
+		{
+			get
+			{
+				return this._link_seo;
+			}
+			set
+			{
+				if ((this._link_seo != value))
+				{
+					this.Onlink_seoChanging(value);
+					this.SendPropertyChanging();
+					this._link_seo = value;
+					this.SendPropertyChanged("link_seo");
+					this.Onlink_seoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_parent", DbType="NVarChar(MAX)")]
+		public string productcate_parent
+		{
+			get
+			{
+				return this._productcate_parent;
+			}
+			set
+			{
+				if ((this._productcate_parent != value))
+				{
+					this.Onproductcate_parentChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_parent = value;
+					this.SendPropertyChanged("productcate_parent");
+					this.Onproductcate_parentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productcate_content", DbType="NVarChar(MAX)")]
+		public string productcate_content
+		{
+			get
+			{
+				return this._productcate_content;
+			}
+			set
+			{
+				if ((this._productcate_content != value))
+				{
+					this.Onproductcate_contentChanging(value);
+					this.SendPropertyChanging();
+					this._productcate_content = value;
+					this.SendPropertyChanged("productcate_content");
+					this.Onproductcate_contentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meta_image", DbType="NVarChar(MAX)")]
+		public string meta_image
+		{
+			get
+			{
+				return this._meta_image;
+			}
+			set
+			{
+				if ((this._meta_image != value))
+				{
+					this.Onmeta_imageChanging(value);
+					this.SendPropertyChanging();
+					this._meta_image = value;
+					this.SendPropertyChanged("meta_image");
+					this.Onmeta_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="NVarChar(MAX)")]
+		public string active
+		{
+			get
+			{
+				return this._active;
+			}
+			set
+			{
+				if ((this._active != value))
+				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
+					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hidden", DbType="Bit")]
+		public System.Nullable<bool> hidden
+		{
+			get
+			{
+				return this._hidden;
+			}
+			set
+			{
+				if ((this._hidden != value))
+				{
+					this.OnhiddenChanging(value);
+					this.SendPropertyChanging();
+					this._hidden = value;
+					this.SendPropertyChanged("hidden");
+					this.OnhiddenChanged();
 				}
 			}
 		}
