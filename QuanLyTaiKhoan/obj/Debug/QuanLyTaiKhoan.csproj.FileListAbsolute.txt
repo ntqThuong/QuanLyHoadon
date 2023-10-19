@@ -1,0 +1,14 @@
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.exe.config
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.exe
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.pdb
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.Properties.Resources.resources
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.GenerateResource.cache
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.exe
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.pdb
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmDangKy.resources
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmDangNhap.resources
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmQuenMatKhau.resources
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmTrangChu.resources
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.AssemblyReference.cache
+C:\Users\Acer\source\repos\QuanLyTaiKhoan\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.QuanLyTaiKhoan.frmSanPham.resources
