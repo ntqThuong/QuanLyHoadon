@@ -26,3 +26,17 @@ D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.GenerateRe
 D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.CoreCompileInputs.cache
 D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.exe
 D:\web_fe\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.pdb
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.exe.config
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.exe
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\bin\Debug\QuanLyTaiKhoan.pdb
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.AssemblyReference.cache
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmDangKy.resources
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmDangNhap.resources
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmQuenMatKhau.resources
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.frmTrangChu.resources
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.Properties.Resources.resources
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.QuanLyTaiKhoan.frmSanPham.resources
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.GenerateResource.cache
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.csproj.CoreCompileInputs.cache
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.exe
+D:\2022\QuanLyHoadon\QuanLyTaiKhoan\obj\Debug\QuanLyTaiKhoan.pdb

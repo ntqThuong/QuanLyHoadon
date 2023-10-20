@@ -21,16 +21,16 @@ namespace QuanLyTaiKhoan
         private void btnDangKy_Click(object sender, EventArgs e)
         {
 
-            if (txtfullname.Text != "" && txtuser.Text != "" && txtemail.Text != "" && txtphone.Text != "" && cbnam.Checked == true && cbnu.Checked == true && txtpass.Text != "" && txtPassCF.Text != "" && (txtpass.Text == txtPassCF.Text))
+            if (txtfullname.Text != "" && txtuser.Text != ""  && txtphone.Text != "" && cbnam.Checked == true && cbnu.Checked == true && txtpass.Text != "" && txtPassCF.Text != "" && (txtpass.Text == txtPassCF.Text))
 
             {
-                tb_User ins = new tb_User();
+                admin_User ins = new admin_User();
                 ins.username_fullname = txtfullname.Text;
-                ins.username_name = txtuser.Text;
-                ins.username_phone = Convert.ToInt32(txtphone.Text);
+                ins.username_username = txtuser.Text;
+                ins.username_phone = txtphone.Text;
                 ins.username_fullname = txtpass.Text;
-                ins.username_pass = txtpass.Text;
-                db.tb_Users.InsertOnSubmit(ins);
+                ins.username_password = txtpass.Text;
+                db.admin_Users.InsertOnSubmit(ins);
                 db.SubmitChanges();
                 MessageBox.Show("Đăng ký thành công");
                 this.Hide();

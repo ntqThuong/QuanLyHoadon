@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="qlbanhangVQ" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=qlbanhangVQ.mssql.somee.com;Initial Catalog=qlbanhangVQ;Persist Security Info=True;User ID=vinhquy1402_SQLLogin_1" SettingsObjectName="QuanLyTaiKhoan.Properties.Settings" SettingsPropertyName="qlbanhangVQConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ql" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6MF64C4\SQLEXPRESS;Initial Catalog=ql;Integrated Security=True" SettingsObjectName="QuanLyTaiKhoan.Properties.Settings" SettingsPropertyName="qlConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms">
     <Type Name="admin_AccessGroupUserForm">
       <Column Name="guf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -89,6 +89,23 @@
       <Association Name="admin_GroupUser_admin_User" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbChiTietDanhMuc" Member="tbChiTietDanhMucs">
+    <Type Name="tbChiTietDanhMuc">
+      <Column Name="ctdm_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="danhmuc_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="congty_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ctdm_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbCongTy_tbChiTietDanhMuc" Member="tbCongTy" ThisKey="congty_id" OtherKey="congty_id" Type="tbCongTy" IsForeignKey="true" />
+      <Association Name="tbDanhMuc_tbChiTietDanhMuc" Member="tbDanhMuc" ThisKey="danhmuc_id" OtherKey="danhmuc_id" Type="tbDanhMuc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbCongTy" Member="tbCongTies">
+    <Type Name="tbCongTy">
+      <Column Name="congty_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="congty_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbCongTy_tbChiTietDanhMuc" Member="tbChiTietDanhMucs" ThisKey="congty_id" OtherKey="congty_id" Type="tbChiTietDanhMuc" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbCustomerAccount" Member="tbCustomerAccounts">
     <Type Name="tbCustomerAccount">
       <Column Name="customer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -103,30 +120,25 @@
       <Column Name="customer_pass" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbDanhMuc" Member="tbDanhMucs">
+    <Type Name="tbDanhMuc">
+      <Column Name="danhmuc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dahmuc_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbDanhMuc_tbChiTietDanhMuc" Member="tbChiTietDanhMucs" ThisKey="danhmuc_id" OtherKey="danhmuc_id" Type="tbChiTietDanhMuc" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbHoaDon" Member="tbHoaDons">
     <Type Name="tbHoaDon">
       <Column Name="hoadon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="hoadon_ngaytao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="hoadon_khachhang" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="haodon_tongcong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbHoaDon_tbHoaDonChiTiet" Member="tbHoaDonChiTiets" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tbHoaDonChiTiet" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbHoaDonChiTiet" Member="tbHoaDonChiTiets">
-    <Type Name="tbHoaDonChiTiet">
-      <Column Name="hdct_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="hoadon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hdct_gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbHoaDon_tbHoaDonChiTiet" Member="tbHoaDon" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tbHoaDon" IsForeignKey="true" />
-      <Association Name="tbSanPham_tbHoaDonChiTiet" Member="tbSanPham" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tbSanPham" IsForeignKey="true" />
+      <Column Name="haodon_ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbKho" Member="tbKhos">
     <Type Name="tbKho">
       <Column Name="kho_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="kho_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="kho_diachi" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="kho_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="kho_diachi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbKho_tbSanPhanTrongKho" Member="tbSanPhanTrongKhos" ThisKey="kho_id" OtherKey="kho_id" Type="tbSanPhanTrongKho" />
     </Type>
   </Table>
   <Table Name="dbo.tbNewCate" Member="tbNewCates">
@@ -192,10 +204,7 @@
   <Table Name="dbo.tbSanPham" Member="tbSanPhams">
     <Type Name="tbSanPham">
       <Column Name="sanpham_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="sanpham_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="sanpham_mota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="sanpham_gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbSanPham_tbHoaDonChiTiet" Member="tbHoaDonChiTiets" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tbHoaDonChiTiet" />
+      <Column Name="sanpham_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="tbSanPham_tbSanPhamChiTiet" Member="tbSanPhamChiTiets" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tbSanPhamChiTiet" />
     </Type>
   </Table>
@@ -203,8 +212,22 @@
     <Type Name="tbSanPhamChiTiet">
       <Column Name="spct_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="spct_motab" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="spct_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="spct_gia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="spct_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbSanPhamChiTiet_tbSanPhanTrongKho" Member="tbSanPhanTrongKhos" ThisKey="spct_id" OtherKey="spct_id" Type="tbSanPhanTrongKho" />
       <Association Name="tbSanPham_tbSanPhamChiTiet" Member="tbSanPham" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tbSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbSanPhanTrongKho" Member="tbSanPhanTrongKhos">
+    <Type Name="tbSanPhanTrongKho">
+      <Column Name="sptk_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="spct_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="kho_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sptk_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sptk_soluong" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbKho_tbSanPhanTrongKho" Member="tbKho" ThisKey="kho_id" OtherKey="kho_id" Type="tbKho" IsForeignKey="true" />
+      <Association Name="tbSanPhamChiTiet_tbSanPhanTrongKho" Member="tbSanPhamChiTiet" ThisKey="spct_id" OtherKey="spct_id" Type="tbSanPhamChiTiet" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

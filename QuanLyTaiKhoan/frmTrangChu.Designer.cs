@@ -35,6 +35,7 @@ namespace QuanLyTaiKhoan
             this.mn_DangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_DangKy = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_QuenMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.máyTínhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_SanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_LoaiSanPham = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,9 +44,8 @@ namespace QuanLyTaiKhoan
             this.mn_HoaDonXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_TonKho = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_nd = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip3.SuspendLayout();
             this.panel_nd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +71,7 @@ namespace QuanLyTaiKhoan
             this.chuộtToolStripMenuItem});
             this.menuStrip3.Location = new System.Drawing.Point(9, 21);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(558, 43);
+            this.menuStrip3.Size = new System.Drawing.Size(557, 43);
             this.menuStrip3.TabIndex = 4;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -108,6 +108,14 @@ namespace QuanLyTaiKhoan
             this.mn_QuenMatKhau.Text = "Quên Mật Khẩu";
             this.mn_QuenMatKhau.Click += new System.EventHandler(this.mn_QuenMatKhau_Click);
             // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.AccessibleName = "mn_Thoat";
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(287, 40);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
+            // 
             // máyTínhToolStripMenuItem
             // 
             this.máyTínhToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,15 +130,15 @@ namespace QuanLyTaiKhoan
             // 
             this.mn_SanPham.AccessibleName = "mn_SanPham";
             this.mn_SanPham.Name = "mn_SanPham";
-            this.mn_SanPham.Size = new System.Drawing.Size(274, 40);
+            this.mn_SanPham.Size = new System.Drawing.Size(317, 40);
             this.mn_SanPham.Text = "Sản Phẩm";
             this.mn_SanPham.Click += new System.EventHandler(this.mn_SanPham_Click);
             // 
             // mn_LoaiSanPham
             // 
             this.mn_LoaiSanPham.Name = "mn_LoaiSanPham";
-            this.mn_LoaiSanPham.Size = new System.Drawing.Size(274, 40);
-            this.mn_LoaiSanPham.Text = "Loại Sản Phẩm";
+            this.mn_LoaiSanPham.Size = new System.Drawing.Size(317, 40);
+            this.mn_LoaiSanPham.Text = "Chi Tiết Sản Phảm";
             // 
             // chuộtToolStripMenuItem
             // 
@@ -170,6 +178,15 @@ namespace QuanLyTaiKhoan
             this.panel_nd.Size = new System.Drawing.Size(1584, 867);
             this.panel_nd.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyTaiKhoan.Properties.Resources.DoodleTown_Nursery;
+            this.pictureBox1.Location = new System.Drawing.Point(-10, 117);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1766, 714);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -179,23 +196,6 @@ namespace QuanLyTaiKhoan
             this.label1.Size = new System.Drawing.Size(379, 95);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý ";
-            // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.AccessibleName = "mn_Thoat";
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(287, 40);
-            this.thoátToolStripMenuItem.Text = "Thoát";
-            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyTaiKhoan.Properties.Resources.DoodleTown_Nursery;
-            this.pictureBox1.Location = new System.Drawing.Point(-10, 117);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1766, 714);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // frmTrangChu
             // 

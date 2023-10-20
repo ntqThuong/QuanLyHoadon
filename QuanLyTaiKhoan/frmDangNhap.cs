@@ -20,9 +20,9 @@ namespace QuanLyTaiKhoan
         public string UserName { get; private set; }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            var check = from u in db.tb_Users
-                        where u.username_name == txtuser.Text
-                        && u.username_pass == txtpass.Text
+            var check = from u in db.admin_Users
+                        where u.username_username == txtuser.Text
+                        && u.username_password == txtpass.Text
                         select u;
             if (check.Count() > 0)
             {

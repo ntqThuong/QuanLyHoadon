@@ -16,32 +16,24 @@ namespace QuanLyTaiKhoan.QuanLyTaiKhoan
         public frmSanPham()
         {
             InitializeComponent();
+            LoadData();
         }
 
-        private void frmSanPham_Load(object sender, EventArgs e)
+        public void LoadData()
         {
-            var ListSanPham = from sp in db.tb_SanPhams
-                              join spct in db.tb_SanPhamChiTiets on sp.sp_id equals spct.sp_id
-                              select new
-                              {
-                                  sp.sp_name,
-                                  spct.spct_name,
-                                  spct.spct_dongia,
-                                  spct.spct_tonkho,
-                              };
-            grvSanPham.DataSource = ListSanPham;
+            grvSanPham.DataSource = from sp in db.tbSanPhams
+                                    select sp;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtLoai.Text == "" && txtTen.Text == "" && txtSoLuong.Text== "" && txtDonGia.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-            }
-            else
-            {
-                
-            }
+            tbSanPham insert = new tbSanPham();
+            insert.sanpham_name = txtTenSanPham.Text;
+            db.tbSanPhams.InsertOnSubmit(insert);
+            db.SubmitChanges();
+            MessageBox.Show("Lưu thành công!");
+            LoadData();
         }
     }
 }
+
